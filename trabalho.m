@@ -2,8 +2,6 @@ addpath ("extra_func:main_func")
 format rat;
 format compact;
 
-# Trabalho-1-asdf (Jefferson Alves)
-
 p = parse_args(argv(), nargin);
 
 if p.f1
@@ -38,16 +36,12 @@ if p.f1
   else
     printf("Criterio de linhas satisfeito! Continuando execução.\n\n");
   endif
-  
-  #[L,U,P,trocas,c] = escalonar(f3, f4, true, false);
-  #detA = determinante(U, upper=true, trocas=trocas);
-  #printf("Matriz U =\n"); disp(U), disp('');
-  #printf("Vetor c =\n"); disp(c), disp('');
-  #check_inconsistente(U, c, detA);
-  #x2 = resolucao_jordan(U, c, p.steps);
+
+  x2 = [22; 17; 11; 72; 4] #teste aqui já com o resultado de S2...
+
+  #fazer interpolação aqui...
 
   
-
 else
   print_help();
   exit(1);

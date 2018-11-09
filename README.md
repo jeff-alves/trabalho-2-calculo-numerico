@@ -5,7 +5,6 @@ Uma pequena ponte está sendo analisada para que uma carga muito pesada passe po
 ## Equipe
 
 - Antônio Victor Figueiredo Porto (líder)
-- Iago Braga
 - Jefferson Alves Costa
 - Lucas da Silva Soares
 - Renan Da Silveira Teles
@@ -22,4 +21,4 @@ Rodar o arquivo trabalho.m, passando os parametros nescessários:
 
 **Exemplo:**
 
-    octave trabalho.m -f1 in/matriz1 -f2 in/vetor1 -f3 in/matriz2 -f4 in/vetor2 -e '10^-3'
+    octave trabalho.m -f1 in/matriz1 -f2 in/vetor1 -f3 in/matriz2 -f4 in/vetor2 -e '10^-5'

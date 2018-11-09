@@ -29,6 +29,10 @@ function params = parse_args (arg_list, arg_size)
       params.('steps') = false;
     endif
 
+    if !isfield(params, 'max_it')
+      params.('max_it') = 50;
+    endif
+
     if erro
       print_help()
     endif

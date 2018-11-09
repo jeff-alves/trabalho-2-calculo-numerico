@@ -10,5 +10,5 @@ function print_help()
   printf("\t-e  \t\t- erro permitido. default: 10^-5\n")
   printf("\n")
   printf("Exemplos:\n")
-  printf("\nEx1: octave trabalho.m -f1 in/matriz1 -f2 in/vetor1 -f3 in/matriz2 -f4 in/vetor2 -e '10^-3'\n")
+  printf("\nEx1: octave trabalho.m -f1 in/matriz1 -f2 in/vetor1 -f3 in/matriz2 -f4 in/vetor2 -e '10^-5'\n")
 endfunction

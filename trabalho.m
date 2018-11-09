@@ -36,11 +36,9 @@ if p.f1
   else
     printf("Criterio de linhas satisfeito! Continuando execução.\n\n");
   endif
-
-  x2 = [22; 17; 11; 72; 4] #teste aqui já com o resultado de S2...
+  [x2, it] = jacob(A2, b2, p.e, p.max_it);
 
   #fazer interpolação aqui...
-
   
 else
   print_help();

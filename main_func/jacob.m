@@ -1,4 +1,4 @@
-function [L,U,P,trocas,c] = jacob(A, b=NaN, pivotar=false, steps=true)
+function [A, b] = jacob(A, b)
 	[m, n] = size(A);
 
 	Ab = aumentada(A, b);

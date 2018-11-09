@@ -22,4 +22,4 @@ Rodar o arquivo trabalho.m, passando os parametros nescessários:
 
 **Exemplo:**
 
-    octave trabalho.m -f1 matriz1 -f2 vetor1 -f3 matriz2 -f4 vetor2 -e '10^-3'
+    octave trabalho.m -f1 in/matriz1 -f2 in/vetor1 -f3 in/matriz2 -f4 in/vetor2 -e '10^-3'

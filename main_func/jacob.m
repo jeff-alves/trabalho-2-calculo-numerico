@@ -1,35 +1,38 @@
 function [x, it] = jacob(A, b, E, max_it)
-	[m, n] = size(A); #linhas/colunas
+	[m, n] = size(A);
 	
-	#TODO: Melhorar chute inicial... diag / b...
-	X = zeros(m,1);
+	for i=1:m #calcular chute inicial.
+		X(i) = b(i)/A(i,i);
+	endfor
 
-	#TODO: Corrigir erro div por zero em casos onde não converge...
-	convergiu = false;
+	norma = Inf;
 	it = 0;
-	while (!convergiu && it <= max_it)
+	while (norma > E && it < max_it)
 		it = it + 1;
 		for i=1:m
+			P = A(i,i);
+			if (P == 0)
+				printf("Divisão por zero na linha(%d). Faça o pivotamento para garantir que o elemento da diagonal não seja zero!\n\n", i);
+				exit(1)
+			endif
 			soma = 0;
 			for j=1:m
 				if(j~=i)
-					soma = soma + A(i,j)*X(j)/A(i,i);
-				end
-			end
-			x(i) = (b(i)/A(i,i)) - soma;
-		end
-		if (abs(norm(x) - norm(X))< E)
-			convergiu = true;
-			x = x';
-		else
-			X=x;
-		end
+					soma = soma + A(i,j) * X(j) / P;
+				endif
+			endfor
+			x(i) = (b(i) / P) - soma;
+		endfor
+		#norma = abs(norm(x) - norm(X));
+		norma = calc_norma(X, x);
+		X=x;
 	endwhile
+	x = x';
 
-	if convergiu
-		printf("Vetor de icognitas x =\n"); disp(x), disp('');
-	else
-		printf("Não convergiu... Parando na iteraçao (%d) com x =\n", it); disp(x'), disp('');
+	if norma <= E
+		printf("Convergiu! Norma (%d), It (%d). Vetor de icognitas x =\n", norma, it); disp(x), disp('');
+	elseif it == max_it
+		printf("Limite de iterações atingido. Norma (%d), Parando na iteraçao (%d) com x =\n", norma, it); disp(x), disp('');
 	endif
 
 endfunction

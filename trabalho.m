@@ -12,7 +12,7 @@ if p.f1
   b2 = dlmread(p.f4);
 
   printf("\n\tMetodo de Gauss.\n\n");
-  [L,U,P,trocas,c] = escalonar(A1, b1, true, false);
+  [L,U,P,trocas,c] = escalonar(A1, b1, false, false);
   detA = determinante(U, upper=true, trocas=trocas);
   printf("Matriz U =\n"); disp(U), disp('');
   printf("Vetor c =\n"); disp(c), disp('');
